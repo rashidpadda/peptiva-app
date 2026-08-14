@@ -5,6 +5,7 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
+import { PageBrandMark } from "@/components/layout/page-brand-mark";
 
 export const metadata: Metadata = {
   title: "About",
@@ -34,7 +35,8 @@ export default function AboutPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
       <section id="story" className="scroll-mt-24">
-        <p className="text-xs font-medium uppercase tracking-wider text-sage-dark">Our Story</p>
+        <PageBrandMark />
+        <p className="mt-4 text-xs font-medium uppercase tracking-wider text-sage-dark">Our Story</p>
         <h1 className="mt-2 font-serif text-3xl text-charcoal sm:text-4xl">About PEPTIVA</h1>
         <p className="mt-5 text-sm leading-relaxed text-stone-600">
           PEPTIVA was founded on a simple idea: that skincare backed by thoughtful formulation

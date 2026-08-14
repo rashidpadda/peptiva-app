@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/tabs";
 import { getReviewsForProduct } from "@/data/reviews";
 import { formatDate } from "@/lib/utils";
+import { PageBrandMark } from "@/components/layout/page-brand-mark";
 
 export function ProductDetail({
   product,
@@ -48,7 +49,8 @@ export function ProductDetail({
 
   return (
     <div className="mx-auto max-w-7xl px-4 pb-24 pt-8 sm:px-6 lg:px-8">
-      <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
+      <PageBrandMark />
+      <div className="mt-6 grid gap-10 lg:grid-cols-2 lg:gap-16">
         <ProductGallery product={product} />
 
         <div>

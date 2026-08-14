@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { ProductGrid } from "@/components/product/product-grid";
 import { ShopFilters } from "@/components/shop/shop-filters";
 import { emptyFilters, type ShopFilterState, type SortOption } from "@/components/shop/use-shop-filters";
+import { PageBrandMark } from "@/components/layout/page-brand-mark";
 
 const MAX_PRICE = Math.max(...products.map((p) => p.price));
 
@@ -72,7 +73,8 @@ export function ShopClient() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
       <div className="mb-8">
-        <p className="text-xs font-medium uppercase tracking-wider text-sage-dark">Shop All</p>
+        <PageBrandMark />
+        <p className="mt-4 text-xs font-medium uppercase tracking-wider text-sage-dark">Shop All</p>
         <h1 className="mt-2 font-serif text-3xl text-charcoal sm:text-4xl">Peptide Skincare</h1>
         <p className="mt-2 max-w-lg text-sm text-stone-500">
           {filtered.length} product{filtered.length !== 1 ? "s" : ""}

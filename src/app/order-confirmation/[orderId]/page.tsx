@@ -8,6 +8,7 @@ import { getProductBySlug } from "@/data/products";
 import { formatCurrency, formatDate } from "@/lib/utils";
 import { ProductVisual } from "@/components/product/product-visual";
 import { Button } from "@/components/ui/button";
+import { PageBrandMark } from "@/components/layout/page-brand-mark";
 
 export default function OrderConfirmationPage(
   props: PageProps<"/order-confirmation/[orderId]">
@@ -18,12 +19,13 @@ export default function OrderConfirmationPage(
   if (!order) {
     return (
       <div className="mx-auto flex max-w-lg flex-col items-center gap-4 px-4 py-32 text-center">
+        <PageBrandMark center />
         <h1 className="font-serif text-2xl text-charcoal">Order not found</h1>
         <p className="text-sm text-stone-500">
           We couldn&apos;t find an order with this ID on this device.
         </p>
         <Button asChild size="lg" className="mt-2">
-          <Link href="/shop">Continue Shopping</Link>
+          <Link href="/">Continue Shopping</Link>
         </Button>
       </div>
     );
@@ -44,7 +46,8 @@ export default function OrderConfirmationPage(
   return (
     <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
       <div className="flex flex-col items-center text-center">
-        <CheckCircle2 className="h-12 w-12 text-sage" />
+        <PageBrandMark center />
+        <CheckCircle2 className="mt-6 h-12 w-12 text-sage" />
         <h1 className="mt-4 font-serif text-3xl text-charcoal sm:text-4xl">
           Thank you for your order.
         </h1>
@@ -147,12 +150,9 @@ export default function OrderConfirmationPage(
         </div>
       </div>
 
-      <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:justify-center">
+      <div className="mt-10 flex justify-center">
         <Button asChild size="lg">
-          <Link href="/shop">Continue Shopping</Link>
-        </Button>
-        <Button asChild variant="secondary" size="lg">
-          <Link href={`/account/orders/${order.id}`}>View Order</Link>
+          <Link href="/">Continue Shopping</Link>
         </Button>
       </div>
     </div>

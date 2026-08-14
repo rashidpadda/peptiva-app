@@ -12,6 +12,7 @@ const NAV_LINKS = [
   { href: "/shop", label: "Shop" },
   { href: "/shop?filter=bestseller", label: "Best Sellers" },
   { href: "/#peptide-science", label: "Peptide Science" },
+  { href: "/quick-buy", label: "Quick Buy" },
   { href: "/about", label: "About" },
 ];
 

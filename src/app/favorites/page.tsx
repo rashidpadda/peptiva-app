@@ -6,6 +6,7 @@ import { useFavoritesStore } from "@/store/favorites";
 import { products } from "@/data/products";
 import { ProductGrid } from "@/components/product/product-grid";
 import { Button } from "@/components/ui/button";
+import { PageBrandMark } from "@/components/layout/page-brand-mark";
 
 export default function FavoritesPage() {
   const productIds = useFavoritesStore((s) => s.productIds);
@@ -13,7 +14,8 @@ export default function FavoritesPage() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-      <p className="text-xs font-medium uppercase tracking-wider text-sage-dark">Saved Items</p>
+      <PageBrandMark />
+      <p className="mt-4 text-xs font-medium uppercase tracking-wider text-sage-dark">Saved Items</p>
       <h1 className="mt-2 font-serif text-3xl text-charcoal sm:text-4xl">Favorites</h1>
 
       {favoriteProducts.length === 0 ? (

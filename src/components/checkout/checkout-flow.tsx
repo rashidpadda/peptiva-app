@@ -30,6 +30,7 @@ import { InformationStep } from "@/components/checkout/steps/information-step";
 import { ShippingStep } from "@/components/checkout/steps/shipping-step";
 import { PaymentStep } from "@/components/checkout/steps/payment-step";
 import { ReviewStep } from "@/components/checkout/steps/review-step";
+import { PageBrandMark } from "@/components/layout/page-brand-mark";
 
 const EMPTY_CUSTOMER: CustomerInfo = {
   firstName: "",
@@ -126,7 +127,8 @@ export function CheckoutFlow() {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 lg:px-8">
-      <Link href="/cart" className="text-sm text-stone-500 hover:text-charcoal">
+      <PageBrandMark />
+      <Link href="/cart" className="mt-4 inline-block text-sm text-stone-500 hover:text-charcoal">
         &larr; Back to bag
       </Link>
       <h1 className="mt-3 font-serif text-3xl text-charcoal">Checkout</h1>

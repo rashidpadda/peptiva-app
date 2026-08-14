@@ -15,6 +15,7 @@ import {
 import { CartLineItem } from "@/components/cart/cart-line-item";
 import { OrderSummary } from "@/components/cart/order-summary";
 import { Button } from "@/components/ui/button";
+import { PageBrandMark } from "@/components/layout/page-brand-mark";
 
 export default function CartPage() {
   const items = useCartStore((s) => s.items);
@@ -33,6 +34,7 @@ export default function CartPage() {
   if (active.length === 0 && saved.length === 0) {
     return (
       <div className="mx-auto flex max-w-2xl flex-col items-center gap-4 px-4 py-32 text-center">
+        <PageBrandMark center />
         <div className="flex h-16 w-16 items-center justify-center rounded-full bg-beige">
           <ShoppingBag className="h-6 w-6 text-stone-500" />
         </div>
@@ -47,7 +49,8 @@ export default function CartPage() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-      <Link href="/shop" className="inline-flex items-center gap-1.5 text-sm text-stone-500 hover:text-charcoal">
+      <PageBrandMark />
+      <Link href="/shop" className="mt-4 inline-flex items-center gap-1.5 text-sm text-stone-500 hover:text-charcoal">
         <ArrowLeft className="h-3.5 w-3.5" /> Continue Shopping
       </Link>
       <h1 className="mt-4 font-serif text-3xl text-charcoal sm:text-4xl">Your Bag</h1>
