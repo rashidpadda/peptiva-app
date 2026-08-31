@@ -5,10 +5,10 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function formatCurrency(amount: number): string {
+export function formatCurrency(amount: number, currency: string = "USD"): string {
   return new Intl.NumberFormat("en-US", {
     style: "currency",
-    currency: "USD",
+    currency,
   }).format(amount);
 }
 
@@ -19,6 +19,13 @@ export function formatDate(date: Date | string): string {
     day: "numeric",
     year: "numeric",
   }).format(d);
+}
+
+export function maskEmail(email: string): string {
+  const [local, domain] = email.split("@");
+  if (!local || !domain) return email;
+  const visible = local.slice(0, 2);
+  return `${visible}${"•".repeat(Math.max(local.length - 2, 3))}@${domain}`;
 }
 
 let counter = 0;

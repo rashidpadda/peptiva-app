@@ -33,9 +33,7 @@ function basicAuthHeader(): string {
   const token = process.env.JUMIO_API_TOKEN;
   const secret = process.env.JUMIO_API_SECRET;
   if (!token || !secret) {
-    throw new JumioConfigError(
-      "JUMIO_API_TOKEN / JUMIO_API_SECRET are not set. Add your Jumio sandbox credentials to .env.local."
-    );
+    throw new JumioConfigError("JUMIO_API_TOKEN and JUMIO_API_SECRET must be set in the environment.");
   }
   return `Basic ${Buffer.from(`${token}:${secret}`).toString("base64")}`;
 }
@@ -94,9 +92,7 @@ export async function initiateJumioWorkflow(params: {
 }): Promise<JumioInitiateResult> {
   const workflowId = process.env.JUMIO_WORKFLOW_ID;
   if (!workflowId) {
-    throw new JumioConfigError(
-      "JUMIO_WORKFLOW_ID is not set. Add your workflow definition key from the Jumio portal (Workflow Builder) to .env.local."
-    );
+    throw new JumioConfigError("JUMIO_WORKFLOW_ID must be set in the environment.");
   }
 
   const response = await fetch(`${ACCOUNT_BASE_URL}/accounts`, {

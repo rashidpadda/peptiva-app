@@ -17,8 +17,8 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "Quick Buy | PEPTIVA",
-  description: "Add your favorite peptide formulas and check out in a few quick steps.",
+  title: "PEPTIVA",
+  description: "Premium peptide skincare.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
